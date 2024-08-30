@@ -1,0 +1,48 @@
+:root {
+  /*primary colors*/
+  --violet: #5a64e0;
+  --light-violet: #939bf4;
+  --very-dark-blue: #19202d;
+  --midnight: #121721;
+  /*secondary colors*/
+  --white: #ffffff;
+  --light-grey: #f4f6f8;
+  --gray: #9daec2;
+  --dark-grey: #6e8098;
+}
+
+body {
+  background-color: var(--light-grey);
+}
+
+.secondary-font-color {
+  color: var(--gray);
+}
+
+h6 {
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.country-card-style {
+  font-weight: 400;
+  color: var(--violet);
+}
+.card {
+  border: none;
+}
+.image-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  background-color: hsl(36, 87%, 49%);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  position: relative;
+  bottom: 25px;
+  left: 16px;
+}
+.company-card-logo {
+  object-fit: contain; /* Maintains aspect ratio while fitting within the container */
+}
