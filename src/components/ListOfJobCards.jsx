@@ -15,7 +15,6 @@ export default function ListOfJobCards({ jobList }) {
                 className="company-card-logo"
                 alt="scoot SVG"
               />
-              {console.log(job.logo)}
             </div>
             <div className="card-body pl-4">
               <h6 className="mb-2">

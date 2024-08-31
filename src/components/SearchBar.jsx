@@ -35,6 +35,7 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
           class="form-control"
           aria-label="Amount (to the nearest dollar)"
           placeholder="filter by location"
+          onChange={handleFilterByLocation}
         ></input>
         <input
           class="form-check-input"
@@ -60,6 +61,19 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
       setJobList(jobList.filter((job) => job.contract === "Full Time"));
     } else {
       // filter jobs to show all, update State with the original list!
+      setJobList(originalJobList);
+    }
+  }
+
+  function handleFilterByLocation(e) {
+    let userLocationInput = e.target.value;
+    if (userLocationInput.length > 0) {
+      setJobList(
+        originalJobList.filter((job) =>
+          job.location.toLowerCase().includes(userLocationInput.toLowerCase())
+        )
+      );
+    } else {
       setJobList(originalJobList);
     }
   }
