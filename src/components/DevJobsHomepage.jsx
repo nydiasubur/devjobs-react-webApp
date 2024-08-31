@@ -4,6 +4,7 @@ import data from "../data.json";
 import { useState } from "react";
 import ListOfJobCards from "./ListOfJobCards";
 export default function DevJobsHomepage() {
+  const originalJobList = data;
   const [jobList, setJobList] = useState(data);
   return (
     <>
@@ -14,7 +15,11 @@ export default function DevJobsHomepage() {
       />
       <div className="container">
         <section className="navbar"></section>
-        <SearchBar />
+        <SearchBar
+          jobList={jobList}
+          setJobList={setJobList}
+          originalJobList={originalJobList}
+        />
         <div className=" container listOfCards mt-5">
           <div className="row gx-5 gy-5 d-flex justify-content-between">
             <ListOfJobCards jobList={jobList} />

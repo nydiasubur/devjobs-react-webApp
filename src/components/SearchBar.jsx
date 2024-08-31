@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from "react";
 
-export default function SearchBar() {
+export default function SearchBar({ originalJobList, jobList, setJobList }) {
+  let fullTimeOnly = false;
   return (
     <>
       <div className="input-group mb-3">
@@ -39,6 +41,7 @@ export default function SearchBar() {
           type="checkbox"
           value=""
           id="full-time-filter-checkbox"
+          onChange={handleFullTimeOnlyCheckbox}
         />
         <label class="form-check-label" for="full-time-filter-checkbox">
           Full Time Only
@@ -49,4 +52,15 @@ export default function SearchBar() {
       </div>
     </>
   );
+
+  function handleFullTimeOnlyCheckbox(e) {
+    fullTimeOnly = e.target.checked;
+    if (fullTimeOnly) {
+      // filter jobs to show only full time, update State with new list
+      setJobList(jobList.filter((job) => job.contract === "Full Time"));
+    } else {
+      // filter jobs to show all, update State with the original list!
+      setJobList(originalJobList);
+    }
+  }
 }

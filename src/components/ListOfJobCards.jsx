@@ -6,10 +6,12 @@ export default function ListOfJobCards({ jobList }) {
       {jobList.map((job) => (
         <div className="col-md-6 col-lg-4" key={job.id}>
           <div className="card">
-            <div className="image-container">
+            <div
+              className="image-container"
+              style={{ backgroundColor: job.logoBackground }}
+            >
               <img
                 src={job.logo} // Update path as needed
-                style={{ backgroundColor: "hsl(36, 87%, 49%)" }}
                 className="company-card-logo"
                 alt="scoot SVG"
               />
