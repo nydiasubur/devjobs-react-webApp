@@ -19,7 +19,8 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
           type="text"
           class="form-control"
           aria-label="Amount (to the nearest dollar)"
-          placeholder="filter by title, companies, expertise.."
+          placeholder="filter by job title and companies"
+          onChange={handleFilterByTitleOrCompanies}
         ></input>
         <span class="input-group-text">
           <svg width="17" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -53,6 +54,21 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
       </div>
     </>
   );
+
+  function handleFilterByTitleOrCompanies(e) {
+    let userInput = e.target.value;
+    if (userInput.length > 0) {
+      setJobList(
+        originalJobList.filter(
+          (job) =>
+            job.position.toLowerCase().includes(userInput.toLowerCase()) ||
+            job.company.toLowerCase().includes(userInput.toLowerCase())
+        )
+      );
+    } else {
+      setJobList(originalJobList);
+    }
+  }
 
   function handleFullTimeOnlyCheckbox(e) {
     fullTimeOnly = e.target.checked;
