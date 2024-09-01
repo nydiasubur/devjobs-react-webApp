@@ -46,3 +46,43 @@ h6 {
 .company-card-logo {
   object-fit: contain; /* Maintains aspect ratio while fitting within the container */
 }
+
+.main-button-style {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--violet);
+  border: none;
+}
+
+.main-button-style:hover,
+.secondary-button-style:hover {
+  background-color: var(--light-violet);
+}
+
+.secondary-button-style {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px;
+  color: var(--violet);
+  background-color: var(--light-grey);
+  border: none;
+}
+.what-you-will-do-list {
+  color: var(--dark-violet);
+  font-size: bigger;
+}
+
+.what-you-will-do-list li::marker {
+  color: var(--violet); /* Set the color of the numbers to purple */
+  font-size: 1.3rem; /* Increase the font size of the numbers */
+  padding-right: 10px;
+}
+
+.footer-expandedJobDescription {
+  background-color: white;
+  margin-left: 0px;
+}

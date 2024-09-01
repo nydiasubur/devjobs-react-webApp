@@ -42,10 +42,9 @@ export default function DevJobsHomepage() {
                 setIsJobSelected={setIsJobSelected}
               />
             </div>
+            <button className="mt-3 mb-3 btn btn-primary">Load More</button>
           </div>
         )}
-
-        <button className="mt-3 mb-3 btn btn-primary">Load More</button>
       </div>
     </>
   );
