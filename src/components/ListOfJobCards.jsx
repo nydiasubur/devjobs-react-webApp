@@ -1,11 +1,18 @@
 import React from "react";
 
-export default function ListOfJobCards({ jobList }) {
+export default function ListOfJobCards({
+  jobList,
+  setSelectedJob,
+  setIsJobSelected,
+}) {
   return (
     <>
       {jobList.map((job) => (
         <div className="col-md-6 col-lg-4" key={job.id}>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleExpandJobCardDescription(job)}
+          >
             <div
               className="image-container"
               style={{ backgroundColor: job.logoBackground }}
@@ -29,4 +36,9 @@ export default function ListOfJobCards({ jobList }) {
       ))}
     </>
   );
+
+  function handleExpandJobCardDescription(job) {
+    setSelectedJob(job);
+    setIsJobSelected(true);
+  }
 }
