@@ -2,6 +2,7 @@
   /*primary colors*/
   --violet: #5a64e0;
   --light-violet: #939bf4;
+  --light-violet-low-opacity: rgba(147, 155, 244, 0.2);
   --very-dark-blue: #19202d;
   --midnight: #121721;
   /*secondary colors*/
@@ -15,6 +16,20 @@ body {
   background-color: var(--light-grey);
   font-family: "Kumbh Sans", sans-serif;
 }
+.top-nav-bar {
+  background-image: url("../src/assets/desktop/bg-pattern-header.svg");
+  background-size: auto; /* Keeps the background image at its natural size */
+  height: 161px;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.top-nav-bar h3 {
+  position: absolute; /* Position relative to the .top-nav-bar */
+  top: 30px; /* Adjust as needed */
+  left: 50px; /* Adjust as needed */
+  color: white; /* Ensure the text is readable */
+}
 
 .secondary-font-color {
   color: var(--gray);
@@ -27,7 +42,6 @@ h6 {
 
 .input-bar input {
   border: none;
-  border-right: 2px solid var(--light-grey); /* Add a right border */
 }
 
 .input-bar input::placeholder {
@@ -56,10 +70,9 @@ h6 {
 .form-check-input {
   appearance: none; /* Remove default styles */
   background-color: var(--gray);
-  border-radius: 4px; /* Rounded corners if desired */
-  border: 2px solid var(--gray); /* Border color for checkbox */
-  cursor: pointer; /* Show pointer cursor on hover */
-  position: relative; /* Needed for positioning the checkmark */
+  border: 2px solid var(--gray);
+  box-shadow: none;
+  position: relative;
   margin: 0; /* Remove default margin */
 }
 
@@ -83,14 +96,19 @@ h6 {
   font-weight: 400;
   color: var(--violet);
 }
+
 .card {
   border: none;
+}
+
+.small-card-homepage:hover {
+  cursor: pointer;
 }
 .image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(36, 87%, 49%);
+
   width: 50px;
   height: 50px;
   border-radius: 12px;
@@ -103,6 +121,10 @@ h6 {
   object-fit: contain; /* Maintains aspect ratio while fitting within the container */
 }
 
+.main-button-style,
+.secondary-button-style {
+  font-weight: 500;
+}
 .main-button-style {
   padding: 10px;
   padding-left: 20px;
@@ -111,6 +133,7 @@ h6 {
   color: var(--white);
   background-color: var(--violet);
   border: none;
+  transition: background-color 0.3s ease;
 }
 
 .main-button-style:hover,
@@ -124,8 +147,15 @@ h6 {
   padding-right: 20px;
   border-radius: 8px;
   color: var(--violet);
-  background-color: var(--light-grey);
+  background-color: var(--light-violet-low-opacity);
   border: none;
+  transition: background-color 0.3s ease;
+}
+.load-more-button {
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .expanded-job-description {
@@ -143,17 +173,37 @@ h6 {
   font-size: 1.3rem; /* Increase the font size of the numbers */
   padding-right: 10px;
 }
-/*
-.expanded-job-description {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensure the container takes the full height of the viewport *
 
-.expanded-job-description .main {
-  flex: 1; /* Allow the main content to take up the remaining space */
+.job-description-section p,
+.job-description-section li,
+.footer-expandedJobDescription p {
+  color: var(--dark-grey);
+  font-weight: 300;
+}
 .footer-expandedJobDescription {
   background-color: white;
   margin-left: 0px;
   margin-top: auto; /* Push the footer to the bottom */
   width: 100%;
+}
+
+/* Mobile devices (up to 599px) */
+
+/* Tablet devices (600px to 1023px) */
+@media (max-width: 1023px) and (min-width: 600px) {
+  .top-nav-bar {
+    background-image: url("../src/assets/tablet/bg-pattern-header.svg");
+    background-size: auto; /* Keeps the background image at its natural size */
+    height: 160px;
+  }
+}
+@media (max-width: 599px) {
+  .top-nav-bar {
+    background-image: url("../src/assets/mobile/bg-pattern-header.svg");
+
+    background-size: auto; /* Keeps the background image at its natural size */
+    height: 131px;
+    position: relative;
+    background-repeat: no-repeat;
+  }
 }

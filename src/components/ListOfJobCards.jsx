@@ -10,7 +10,7 @@ export default function ListOfJobCards({
       {jobList.map((job) => (
         <div className="col-md-6 col-lg-4" key={job.id}>
           <div
-            className="card"
+            className="card small-card-homepage"
             onClick={() => handleExpandJobCardDescription(job)}
           >
             <div

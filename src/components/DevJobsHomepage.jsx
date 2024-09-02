@@ -4,6 +4,7 @@ import data from "../data.json";
 import { useState } from "react";
 import ListOfJobCards from "./ListOfJobCards";
 import ExpandedJobDescription from "./ExpandedJobDescription";
+import TopNavBar from "./TopNavBar";
 export default function DevJobsHomepage() {
   const originalJobList = data;
   const [jobList, setJobList] = useState(data);
@@ -15,11 +16,7 @@ export default function DevJobsHomepage() {
 
   return (
     <>
-      <img
-        src="../src/assets/desktop/bg-pattern-header.svg"
-        alt="background pattern header"
-        className="img-fluid"
-      />
+      <TopNavBar />
 
       {isJobSelected ? (
         <ExpandedJobDescription
@@ -43,7 +40,9 @@ export default function DevJobsHomepage() {
                 setIsJobSelected={setIsJobSelected}
               />
             </div>
-            <button className="mt-3 mb-3 btn btn-primary">Load More</button>
+            <button className="btn load-more-button main-button-style ">
+              Load More
+            </button>
           </div>
         </div>
       )}

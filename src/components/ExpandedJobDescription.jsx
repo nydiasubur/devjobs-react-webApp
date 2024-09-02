@@ -19,7 +19,7 @@ export default function ExpandedJobDescription({
 
           {/* top card section here.. main content starts here*/}
           <div className="col-8 main">
-            <div className="card mb-3 top-section">
+            <div className="card top-section">
               <div className="row g-4">
                 <div className="col-md-3">
                   <img
@@ -33,7 +33,7 @@ export default function ExpandedJobDescription({
                   />
                 </div>
                 <div className="col-md-5 align-self-center">
-                  <h5 className="card-title">{selectedJob.company}</h5>
+                  <h5 className="card-title fw-bold">{selectedJob.company}</h5>
                   <small className="text-body-secondary">
                     <p className="card-text">{selectedJob.website}</p>
                   </small>
@@ -53,9 +53,11 @@ export default function ExpandedJobDescription({
                   <h6 className="mb-2">
                     {selectedJob.postedAt} . {selectedJob.contract}
                   </h6>
-                  <h2 className="card-title">{selectedJob.position}</h2>
-                  <h6 className="mb-2">{selectedJob.company}</h6>
-                  <h6 className="mt-3 country-card-style">
+                  <h2 className="card-title fw-semibold">
+                    {selectedJob.position}
+                  </h2>
+
+                  <h6 className="mt-3 country-card-style fw-semibold">
                     {selectedJob.location}
                   </h6>
                 </div>
@@ -95,8 +97,8 @@ export default function ExpandedJobDescription({
         <div className="card p-3">
           <div className="d-flex justify-content-around align-items-center">
             <div>
-              <h5 className="card-title">{selectedJob.position}</h5>
-              <p className="card-text">
+              <h5 className="card-title fw-semibold">{selectedJob.position}</h5>
+              <p className="card-text ">
                 <small className="text-body-secondary">
                   {selectedJob.company}
                 </small>
