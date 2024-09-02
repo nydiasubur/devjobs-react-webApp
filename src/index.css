@@ -13,6 +13,7 @@
 
 body {
   background-color: var(--light-grey);
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .secondary-font-color {
@@ -24,6 +25,60 @@ h6 {
   color: var(--gray);
 }
 
+.input-bar input {
+  border: none;
+  border-right: 2px solid var(--light-grey); /* Add a right border */
+}
+
+.input-bar input::placeholder {
+  color: var(--gray);
+}
+
+/*overriding bootstrap CSS for this one*/
+.input-group-text {
+  border: none;
+  background-color: var(--white);
+}
+.form-check-label {
+  background-color: var(--white);
+  padding: 5px;
+}
+
+.form-check-input input {
+  background-color: var(--gray);
+}
+
+.form-check-input:checked {
+  background-color: var(--violet); /* Background color when checked */
+  border: 2px solid var(--violet); /* Border color when checked */
+}
+
+.form-check-input {
+  appearance: none; /* Remove default styles */
+  background-color: var(--gray);
+  border-radius: 4px; /* Rounded corners if desired */
+  border: 2px solid var(--gray); /* Border color for checkbox */
+  cursor: pointer; /* Show pointer cursor on hover */
+  position: relative; /* Needed for positioning the checkmark */
+  margin: 0; /* Remove default margin */
+}
+
+.form-check-label {
+  color: var(--very-dark-blue);
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Container to ensure white background around the checkbox */
+.checkbox-container {
+  background-color: var(--white);
+  padding: 5px;
+  border-radius: 5px; /* Optional: Add rounded corners if desired */
+  display: inline-flex;
+  align-items: center;
+}
+
 .country-card-style {
   font-weight: 400;
   color: var(--violet);
@@ -33,12 +88,13 @@ h6 {
 }
 .image-container {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  justify-content: center;
+  align-items: center;
   background-color: hsl(36, 87%, 49%);
   width: 50px;
   height: 50px;
   border-radius: 12px;
+  /*positioning it to be slightly above the card*/
   position: relative;
   bottom: 25px;
   left: 16px;
@@ -71,6 +127,12 @@ h6 {
   background-color: var(--light-grey);
   border: none;
 }
+
+.expanded-job-description {
+  position: relative;
+  bottom: 80px;
+}
+
 .what-you-will-do-list {
   color: var(--dark-violet);
   font-size: bigger;
@@ -81,8 +143,17 @@ h6 {
   font-size: 1.3rem; /* Increase the font size of the numbers */
   padding-right: 10px;
 }
+/*
+.expanded-job-description {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the container takes the full height of the viewport *
 
+.expanded-job-description .main {
+  flex: 1; /* Allow the main content to take up the remaining space */
 .footer-expandedJobDescription {
   background-color: white;
   margin-left: 0px;
+  margin-top: auto; /* Push the footer to the bottom */
+  width: 100%;
 }

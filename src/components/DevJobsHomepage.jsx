@@ -20,19 +20,20 @@ export default function DevJobsHomepage() {
         alt="background pattern header"
         className="img-fluid"
       />
-      <div className="container">
-        <section className="navbar"></section>
-        <SearchBar
-          jobList={jobList}
-          setJobList={setJobList}
-          originalJobList={originalJobList}
+
+      {isJobSelected ? (
+        <ExpandedJobDescription
+          selectedJob={selectedJob}
+          setIsJobSelected={setIsJobSelected}
         />
-        {isJobSelected ? (
-          <ExpandedJobDescription
-            selectedJob={selectedJob}
-            setIsJobSelected={setIsJobSelected}
+      ) : (
+        <div className="container">
+          <section className="navbar"></section>
+          <SearchBar
+            jobList={jobList}
+            setJobList={setJobList}
+            originalJobList={originalJobList}
           />
-        ) : (
           <div className=" container listOfCards mt-5">
             <div className="row gx-5 gy-5 d-flex justify-content-between">
               <ListOfJobCards
@@ -44,8 +45,8 @@ export default function DevJobsHomepage() {
             </div>
             <button className="mt-3 mb-3 btn btn-primary">Load More</button>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }

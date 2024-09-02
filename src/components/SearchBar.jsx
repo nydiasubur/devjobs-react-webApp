@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function SearchBar({ originalJobList, jobList, setJobList }) {
   let fullTimeOnly = false;
   return (
-    <>
+    <section class="input-bar">
       <div className="input-group mb-3">
         <span class="input-group-text">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -38,21 +38,20 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
           placeholder="filter by location"
           onChange={handleFilterByLocation}
         ></input>
-        <input
-          class="form-check-input"
-          type="checkbox"
-          value=""
-          id="full-time-filter-checkbox"
-          onChange={handleFullTimeOnlyCheckbox}
-        />
-        <label class="form-check-label" for="full-time-filter-checkbox">
-          Full Time Only
-        </label>
-        <button type="submit" class="btn btn-primary">
-          search
-        </button>
+        <div className="checkbox-container">
+          <input
+            class="form-check-input align-self-center"
+            type="checkbox"
+            value=""
+            id="full-time-filter-checkbox"
+            onChange={handleFullTimeOnlyCheckbox}
+          />
+          <label class="form-check-label" for="full-time-filter-checkbox">
+            Full Time Only
+          </label>
+        </div>
       </div>
-    </>
+    </section>
   );
 
   function handleFilterByTitleOrCompanies(e) {
