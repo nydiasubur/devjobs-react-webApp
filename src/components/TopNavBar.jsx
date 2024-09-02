@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function TopNavBar() {
+export default function TopNavBar({ setIsJobSelected }) {
   return (
     <div className="top-nav-bar">
-      <h3>devjob</h3>
+      <div onClick={() => setIsJobSelected(false)} className="home-button">
+        <h3>devjob</h3>
+      </div>
 
       {/*
            <img

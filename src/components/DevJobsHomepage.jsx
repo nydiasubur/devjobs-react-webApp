@@ -16,7 +16,7 @@ export default function DevJobsHomepage() {
 
   return (
     <>
-      <TopNavBar />
+      <TopNavBar setIsJobSelected={setIsJobSelected} />
 
       {isJobSelected ? (
         <ExpandedJobDescription

@@ -10,9 +10,6 @@ export default function ExpandedJobDescription({
   return (
     <>
       <div className="expanded-job-description">
-        <button onClick={() => setIsJobSelected(false)}>
-          Back to Job List
-        </button>
         <div className="row">
           {/*to add responsive spacing on left and right*/}
           <div className="col-2"></div>
@@ -47,7 +44,7 @@ export default function ExpandedJobDescription({
             </div>
 
             {/* job description section here */}
-            <div className="job-description-section card p-5 mb-5">
+            <div className="job-description-section card p-3 mb-5">
               <div className="row">
                 <div className="col-9 mb-4">
                   <h6 className="mb-2">

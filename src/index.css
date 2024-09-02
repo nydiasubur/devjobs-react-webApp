@@ -30,6 +30,10 @@ body {
   left: 50px; /* Adjust as needed */
   color: white; /* Ensure the text is readable */
 }
+.top-nav-bar h3:hover {
+  color: var(--light-violet);
+  cursor: pointer;
+}
 
 .secondary-font-color {
   color: var(--gray);
@@ -187,6 +191,10 @@ h6 {
   width: 100%;
 }
 
+.home-button {
+  border: none;
+  default: none;
+}
 /* Mobile devices (up to 599px) */
 
 /* Tablet devices (600px to 1023px) */
