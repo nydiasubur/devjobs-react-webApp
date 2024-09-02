@@ -9,26 +9,26 @@ export default function ExpandedJobDescription({
 
   return (
     <>
-      <div className="expanded-job-description">
+      <div className="expanded-job-description ">
         <div className="row">
           {/*to add responsive spacing on left and right*/}
-          <div className="col-2"></div>
+          <div className="col-lg-2 col-md-1 d-none d-md-block"></div>
 
           {/* top card section here.. main content starts here*/}
-          <div className="col-8 main">
+          <div className="col-lg-8 col-md-10 main ">
             <div className="card top-section">
               <div className="row g-4">
-                <div className="col-md-3">
+                <div className="col-md-3 ">
                   <img
                     src={selectedJob.logo}
                     className="img-fluid p-3 company-card-logo"
                     alt="company name"
                     style={{
-                      height: "140px",
                       backgroundColor: selectedJob.logoBackground,
                     }}
                   />
                 </div>
+
                 <div className="col-md-5 align-self-center">
                   <h5 className="card-title fw-bold">{selectedJob.company}</h5>
                   <small className="text-body-secondary">
@@ -44,9 +44,9 @@ export default function ExpandedJobDescription({
             </div>
 
             {/* job description section here */}
-            <div className="job-description-section card p-3 mb-5">
+            <div className="job-description-section card p-5 mb-5">
               <div className="row">
-                <div className="col-9 mb-4">
+                <div className="col-md-9 col-xs-12 mb-4">
                   <h6 className="mb-2">
                     {selectedJob.postedAt} . {selectedJob.contract}
                   </h6>
@@ -58,8 +58,10 @@ export default function ExpandedJobDescription({
                     {selectedJob.location}
                   </h6>
                 </div>
-                <div className="col-3 d-flex align-items-center justify-content-end">
-                  <button className="main-button-style">Apply now</button>
+                <div className="col-md-3 col-xs-12 mb-4 mt-4 d-flex align-items-center justify-content-end">
+                  <button className="main-button-style full-width-mobile">
+                    Apply now
+                  </button>
                 </div>
               </div>
               <div className="row">
@@ -87,7 +89,7 @@ export default function ExpandedJobDescription({
               </div>
             </div>
           </div>
-          <div className="col-2"></div>
+          <div className="col-lg-2 col-md-1 d-none d-md-block"></div>
         </div>
       </div>
       <div className="footer-expandedJobDescription">
@@ -102,7 +104,9 @@ export default function ExpandedJobDescription({
               </p>
             </div>
             <div>
-              <button className="main-button-style">Company Site</button>
+              <button className="main-button-style full-width-mobile">
+                Apply Now
+              </button>
             </div>
           </div>
         </div>

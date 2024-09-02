@@ -184,6 +184,10 @@ h6 {
   color: var(--dark-grey);
   font-weight: 300;
 }
+
+.top-section img {
+  height: 140px;
+}
 .footer-expandedJobDescription {
   background-color: white;
   margin-left: 0px;
@@ -206,6 +210,16 @@ h6 {
   }
 }
 @media (max-width: 599px) {
+  .full-width-mobile {
+    width: 100%;
+  }
+  .footer-expandedJobDescription .card-title,
+  .footer-expandedJobDescription .card-text {
+    display: none;
+  }
+  .footer-expandedJobDescription button {
+    width: 100%;
+  }
   .top-nav-bar {
     background-image: url("../src/assets/mobile/bg-pattern-header.svg");
 
@@ -213,5 +227,32 @@ h6 {
     height: 131px;
     position: relative;
     background-repeat: no-repeat;
+  }
+  .card.top-section {
+    height: 205px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .top-section .col-md-3 img {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    position: relative;
+    top: -40px;
+    /*positioning it to be slightly above the card*/
+  }
+  .top-section .card-title,
+  .top-section .card-text,
+  .top-section button {
+    position: relative;
+    bottom: 40px;
+  }
+  .expanded-job-description {
+    position: relative;
+    bottom: 40px;
   }
 }
