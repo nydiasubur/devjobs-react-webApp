@@ -148,7 +148,12 @@ h6 {
   margin-right: 10px;
   border-radius: 5px;
 }
-
+.text-input-style {
+  color: var(--midnight);
+}
+.text-input-style:focus {
+  color: var(--midnight);
+}
 /* Container to ensure white background around the checkbox */
 .checkbox-container {
   background-color: var(--white);
@@ -156,6 +161,18 @@ h6 {
   border-radius: 5px; /* Optional: Add rounded corners if desired */
   display: inline-flex;
   align-items: center;
+}
+
+/* Default styles (for larger screens) */
+.input-group .location-icon,
+.input-group .fulltime-icon,
+.modal {
+  display: none; /* Hide icons and modals by default */
+}
+
+.input-group .location-input,
+.input-group .fulltime-checkbox {
+  display: inline-block; /* Show full input fields */
 }
 
 .country-card-style {
@@ -278,8 +295,18 @@ li::marker {
   border: none;
   default: none;
 }
-/* Mobile devices (up to 599px) */
-
+/*footer css*/
+.personal-info {
+  color: var(--gray);
+  letter-spacing: 0.05em;
+}
+.personal-info a {
+  color: var(--violet);
+  text-decoration: none;
+}
+.personal-info a:hover {
+  color: var(--light-violet);
+}
 /* Tablet devices (600px to 1023px) */
 @media (max-width: 1023px) and (min-width: 600px) {
   .top-nav-bar {
@@ -289,6 +316,19 @@ li::marker {
   }
 }
 @media (max-width: 599px) {
+  .input-group .location-input,
+  .input-group .fulltime-checkbox {
+    display: none; /* Hide full input fields on mobile */
+  }
+
+  .input-group .location-icon,
+  .input-group .fulltime-icon {
+    display: inline-block; /* Show icons instead */
+  }
+
+  .modal {
+    display: flex; /* Modals appear when triggered */
+  }
   .full-width-mobile {
     width: 100%;
   }

@@ -5,6 +5,7 @@ import { useState } from "react";
 import ListOfJobCards from "./ListOfJobCards";
 import ExpandedJobDescription from "./ExpandedJobDescription";
 import TopNavBar from "./TopNavBar";
+import Footer from "./Footer";
 export default function DevJobsHomepage() {
   const originalJobList = data;
   const [jobList, setJobList] = useState(data);
@@ -43,6 +44,7 @@ export default function DevJobsHomepage() {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

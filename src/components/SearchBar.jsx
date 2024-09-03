@@ -17,12 +17,13 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
         </span>
         <input
           type="text"
-          className="form-control"
+          className="form-control text-input-style"
           aria-label="Amount (to the nearest dollar)"
           placeholder="filter by job title and companies"
           onChange={handleFilterByTitleOrCompanies}
           style={{ backgroundColor: "var(--white)" }}
-        ></input>
+        />
+
         <span className="input-group-text">
           <svg width="17" height="24" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -34,7 +35,7 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
         </span>
         <input
           type="text"
-          className="form-control"
+          className="form-control text-input-style"
           aria-label="Amount (to the nearest dollar)"
           placeholder="filter by location"
           onChange={handleFilterByLocation}
