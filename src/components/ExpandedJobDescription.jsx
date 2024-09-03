@@ -31,9 +31,13 @@ export default function ExpandedJobDescription({
 
                 <div className="col-md-5 align-self-center">
                   <h5 className="card-title fw-bold">{selectedJob.company}</h5>
-                  <small className="text-body-secondary">
-                    <p className="card-text">{selectedJob.website}</p>
-                  </small>
+                  <div className="company-link-style-job-description">
+                    <small>
+                      <p className="card-text" style={{ color: "var(--gray)" }}>
+                        {selectedJob.website}{" "}
+                      </p>
+                    </small>
+                  </div>
                 </div>
                 <div className="col-md-4 align-self-center justify-content-center">
                   <button className="secondary-button-style">
@@ -72,7 +76,9 @@ export default function ExpandedJobDescription({
                   <p>{selectedJob.requirements.content}</p>
                   <ul>
                     {selectedJob.requirements.items.map((item, index) => (
-                      <li key={index}>{item}</li>
+                      <li className="px-3 mb-2" key={index}>
+                        {item}
+                      </li>
                     ))}
                   </ul>
 
@@ -80,7 +86,7 @@ export default function ExpandedJobDescription({
                   <p>{selectedJob.role.content}</p>
                   <ol className="what-you-will-do-list">
                     {selectedJob.role.items.map((item, index) => (
-                      <li key={index} className="mb-3">
+                      <li key={index} className="mb-2 px-3">
                         {item}
                       </li>
                     ))}
@@ -98,7 +104,7 @@ export default function ExpandedJobDescription({
             <div>
               <h5 className="card-title fw-semibold">{selectedJob.position}</h5>
               <p className="card-text ">
-                <small className="text-body-secondary">
+                <small className="" style={{ color: "var(--gray)" }}>
                   {selectedJob.company}
                 </small>
               </p>
