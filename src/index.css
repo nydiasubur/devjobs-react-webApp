@@ -51,6 +51,48 @@ body {
   cursor: pointer;
 }
 
+.toggle-container {
+  position: absolute; /* Position relative to the .top-nav-bar */
+  right: 20px;
+  top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.toggle-button {
+  visibility: hidden;
+}
+.toggle-button + label {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: var(--primary-text-color);
+}
+
+.toggle-button + label::before {
+  content: "";
+  height: 1em;
+  width: 2em;
+  border-radius: 1em;
+  background-color: var(--white);
+  margin-right: 0.5em;
+  transition: background-color 250ms ease-in-out;
+}
+
+.toggle-button + label::after {
+  content: "";
+  height: 0.8em;
+  width: 0.8em;
+  border-radius: 1em;
+  background-color: var(--light-violet);
+  position: absolute;
+  left: 1.6em;
+  transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+}
+.toggle-button:checked + label::after {
+  transform: translateX(100%);
+}
+
 h4 {
   color: var(--midnight);
 }

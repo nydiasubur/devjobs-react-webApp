@@ -11,11 +11,8 @@ export default function DevJobsHomepage() {
   const [selectedJob, setSelectedJob] = useState(null);
   const [isJobSelected, setIsJobSelected] = useState(false);
 
-  console.log("home page selected job", selectedJob);
-  console.log("home page isjobselected", isJobSelected);
-
   return (
-    <>
+    <div>
       <TopNavBar setIsJobSelected={setIsJobSelected} />
 
       {isJobSelected ? (
@@ -46,6 +43,6 @@ export default function DevJobsHomepage() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
