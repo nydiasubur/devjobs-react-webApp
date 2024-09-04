@@ -33,7 +33,7 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 .top-nav-bar {
-  background-image: url("assets/desktop/bg-pattern-header.svg");
+  background-image: url("/assets/desktop/bg-pattern-header.svg");
   background-size: auto; /* Keeps the background image at its natural size */
   height: 161px;
   position: relative;
@@ -362,7 +362,6 @@ li::marker {
   }
   .top-nav-bar {
     background-image: url("/assets/mobile/bg-pattern-header.svg");
-
     background-size: auto; /* Keeps the background image at its natural size */
     height: 131px;
     position: relative;
