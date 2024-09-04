@@ -3,12 +3,22 @@ import { useState } from "react";
 import ToggleThemeButton from "./ToggleThemeButton";
 import useLocalStorage from "use-local-storage";
 
-export default function TopNavBar({ setIsJobSelected }) {
+export default function TopNavBar({
+  setIsJobSelected,
+  originalJobList,
+  setJobList,
+}) {
   const [isDarkMode, setIsDarkMode] = useLocalStorage(false);
 
   return (
     <div className="top-nav-bar">
-      <div onClick={() => setIsJobSelected(false)} className="home-button">
+      <div
+        onClick={() => {
+          setIsJobSelected(false);
+          setJobList(originalJobList);
+        }}
+        className="home-button"
+      >
         <h3>devjob</h3>
       </div>
       <ToggleThemeButton

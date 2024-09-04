@@ -283,6 +283,9 @@ li::marker {
   width: 100%;
   color: var(--gray);
 }
+.footer-expandedJobDescription .content {
+  display: flex;
+}
 
 .job-description-section p,
 .job-description-section li,
@@ -357,8 +360,8 @@ li::marker {
   .footer-expandedJobDescription .card-text {
     display: none;
   }
-  .footer-expandedJobDescription button {
-    width: 100%;
+  .footer-expandedJobDescription .content {
+    display: block;
   }
   .top-nav-bar {
     background-image: url("/assets/mobile/bg-pattern-header.svg");

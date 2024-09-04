@@ -100,7 +100,7 @@ export default function ExpandedJobDescription({
       </div>
       <div className="footer-expandedJobDescription">
         <div className="card p-3">
-          <div className="d-flex justify-content-around align-items-center">
+          <div className=" content justify-content-around align-items-center">
             <div>
               <h5 className="card-title fw-semibold">{selectedJob.position}</h5>
               <p className="card-text ">
