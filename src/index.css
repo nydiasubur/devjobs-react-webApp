@@ -33,7 +33,7 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 .top-nav-bar {
-  background-image: url("../src/assets/desktop/bg-pattern-header.svg");
+  background-image: url("/assets/desktop/bg-pattern-header.svg");
   background-size: auto; /* Keeps the background image at its natural size */
   height: 161px;
   position: relative;
@@ -310,7 +310,7 @@ li::marker {
 /* Tablet devices (600px to 1023px) */
 @media (max-width: 1023px) and (min-width: 600px) {
   .top-nav-bar {
-    background-image: url("../src/assets/tablet/bg-pattern-header.svg");
+    background-image: url("/assets/tablet/bg-pattern-header.svg");
     background-size: auto; /* Keeps the background image at its natural size */
     height: 160px;
   }
@@ -340,7 +340,7 @@ li::marker {
     width: 100%;
   }
   .top-nav-bar {
-    background-image: url("../src/assets/mobile/bg-pattern-header.svg");
+    background-image: url("/assets/mobile/bg-pattern-header.svg");
 
     background-size: auto; /* Keeps the background image at its natural size */
     height: 131px;
