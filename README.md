@@ -30,10 +30,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](/screenshots/homepage-desktop.png)
-![](/screenshots/expanded-page-desktop-darkmode.png)
-![](homepage-mobile-darkmode.png)
-![](expanded-page-mobile.png)
+![](./public/screenshots/homepage-desktop.png)
+![](./public/screenshots/expanded-page-desktop-darkmode.png)
+![](./public/screenshots/homepage-mobile-darkmode.png)
+![](./public/screenshots/expanded-page-mobile.png)
 
 ### Links
 
