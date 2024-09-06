@@ -1,93 +1,249 @@
-# Frontend Mentor - Devjobs web app
+# Frontend Mentor - Devjobs web app solution
 
-![Design preview for the Devjobs web app coding challenge](./preview.jpg)
+## Table of contents
 
-## Welcome! 👋
+- [Overview](#overview)
+  - [The challenge / Functionalities Implemented](#the-challenge--functionalities-implemented)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [3 main things learned in this project](#3-main-things-learned-in-this-project)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+## Overview
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+This is a solution to the [Devjobs web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l). Mimicking realistic projects, I was given a Figma design to materialize the project that i built with ReactJS, Vanilla CSS and Bootstrap, hosted at Netlify.
 
-**To do this challenge, you need a solid understanding of HTML, CSS, and JavaScript.**
+### The challenge / Functionalities Implemented
 
-## The challenge
-
-Your challenge is to build out this jobs board using a local `data.json` to retrieve the data. Your goal is to try to get your project looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-We provide the data in a local `data.json` file, so use that to populate the content on the first load. If you want to take it up a notch, feel free to build this as a full-stack application!
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for each page depending on their device's screen size
 - See hover states for all interactive elements throughout the site
-- Be able to filter jobs on the index page by title, location, and whether a job is for a full-time position
+- Be able to filter jobs on the home page by Job position's title, location, and whether a job is for a full-time position
+- Be able to select a "light mode" or "dark mode" theme and have the broswer remember their selected preference when the page is revisited.
 - Be able to click a job from the index page so that they can read more information and apply for the job
-- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](/screenshots/homepage-desktop.png)
+![](/screenshots/expanded-page-desktop-darkmode.png)
+![](homepage-mobile-darkmode.png)
+![](expanded-page-mobile.png)
 
-Your task is to build out the project to the design file provided. We provide both Sketch and Figma versions of the design, so you can choose which tool you prefer to use. You can download the design file on the platform. **Please be sure not to share them with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+### Links
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
+- Live Site URL: https://dev-job-web-app-react.netlify.app/
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+## My process
 
-## Building your project
+1. Static Layout: I began by building the static HTML and CSS for the homepage to establish the visual structure.
+2. Component Breakdown: I then identified reusable UI elements and refactored them into smaller, modular React components for cleaner code and better maintainability.
+3. State Management: After defining the components, I carefully planned the state management hierarchy, ensuring that state was shared efficiently between components for optimal performance.
+4. Iteration: I iterated as needed, checking if any components could be further simplified or broken down.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Built with
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the design files to GitHub. With these premium challenges, please be sure not to share the design files in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- [React](https://reactjs.org/) - JavaScript library
+- Semantic HTML5 markup
+- Vanilla CSS
+- Bootstrap 5.3
+- [useLocalStorage] (https://www.npmjs.com/package/use-local-storage) - Custom React hook for local storage management
 
-## Deploying your project
+# 3 main things learned in this project
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+## 1. Conditionally Rendering with State
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+In this project, I learned how to efficiently conditionally render UI elements based on the state, particularly using the && operator. For instance, in the snippet below, I only display the "Load More" button when the temporary job list is shorter than the original job list.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+```jsx:
+{temporaryJobListForLoadMore.length < jobList.length && (
+    <button
+      className="btn load-more-button main-button-style"
+      onClick={() => setPage(page + 1)}
+    >
+      Load More
+    </button>
+)}
+```
 
-## Create a custom `README.md`
+## 2. Handling Multiple Inputs and Filtering Logic
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+A key challenge in this project was handling multiple inputs and dynamically rendering the UI based on user input. The search bar on the homepage processes three main filters:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+1. Job position (text input)
+2. Location (text input)
+3. Full-time job checkbox
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+To achieve this, I carefully managed the component states, including originalJobList to store the unfiltered data and jobList to store the filtered results. These states (stored at the home page component) were shared with child components to enable smooth filtering logic. The search bar component below takes in originalJobList, jobList, and setJobList as props and applies filter functions accordingly.
 
-## Submitting your solution
+```jsx
+export default function SearchBar({ originalJobList, jobList, setJobList }) {
+  {/*... the rest of the code above*/}
+ <input
+  type="text"
+    className="form-control text-input-style d-none d-md-block"
+    aria-label="location filter"
+    placeholder="filter by location"
+    onChange={handleFilterByLocation}
+    style={{ backgroundColor: "var(--white)" }}
+  />
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+    <div className="checkbox-container ">
+      <input
+        className="form-check-input align-self-center d-none d-md-block"
+        type="checkbox"
+        value=""
+        id="full-time-filter-checkbox"
+        onChange={handleFullTimeOnlyCheckbox}
+      />
+      <label
+        className="form-check-label d-none d-md-block "
+        for="full-time-filter-checkbox"
+      >
+        Full Time Only
+      </label>
+    </div>
+}
+```
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+The 3 main functions of my jsx to handle the filter function are as follows:
 
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the design files to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
+# 1. Filter by Job Title or Company
 
-## Sharing your solution
+This function filters the job list based on user input in the job title or company field. It updates the state to trigger re-rendering of the filtered results.
 
-There are multiple places you can share your solution:
+```js
+function handleFilterByTitleOrCompanies(e) {
+  let userInput = e.target.value;
+  if (userInput.length > 0) {
+    setJobList(
+      originalJobList.filter(
+        (job) =>
+          job.position.toLowerCase().includes(userInput.toLowerCase()) ||
+          job.company.toLowerCase().includes(userInput.toLowerCase())
+      )
+    );
+  } else {
+    setJobList(originalJobList);
+  }
+}
+```
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+# 2. Full-Time Job Filter
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+This function filters the job list to show only full-time positions when the checkbox is selected. If unchecked, it restores the full job list.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+```jsx
+function handleFullTimeOnlyCheckbox(e) {
+  fullTimeOnly = e.target.checked;
+  if (fullTimeOnly) {
+    // filter jobs to show only full time, update State with new list
+    setJobList(jobList.filter((job) => job.contract === "Full Time"));
+  } else {
+    // filter jobs to show all, update State with the original list!
+    setJobList(originalJobList);
+  }
+}
+x;
+```
 
-## Got feedback for us?
+# 3. Filter by Location
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+This function filters the job list based on the user’s location input. It updates the jobList state with matching results or restores the original list if the input is cleared.
 
-**Have fun building!** 🚀
+```jsx
+function handleFilterByLocation(e) {
+  let userLocationInput = e.target.value;
+  if (userLocationInput.length > 0) {
+    setJobList(
+      originalJobList.filter((job) =>
+        job.location.toLowerCase().includes(userLocationInput.toLowerCase())
+      )
+    );
+  } else {
+    setJobList(originalJobList);
+  }
+}
+```
+
+## 3.Custom CSS Variable/attribute selector and Using useEffect to Access Attributes/Properties Outside of the Component
+
+In this project, one of the key things I learned was how to use the [data-theme="dark"] attribute selector in CSS to dynamically apply styles based on the theme. By leveraging CSS variables and this attribute, I was able to efficiently switch between light and dark modes.
+
+Using [data-theme="dark"] in CSS
+I used the [data-theme="dark"] attribute to target and change the styles for dark mode without manually applying class-based styles. This allowed me to declare the default (light) theme in the :root pseudo-class and switch to dark mode by setting the data-theme="dark" attribute on the <body> element.
+
+```css
+:root {
+  /*primary colors*/
+  --violet: #5a64e0;
+  --secondary-violet: #5a64e0;
+  --light-violet: #939bf4;
+  --light-violet-low-opacity: rgba(147, 155, 244, 0.2);
+  --very-dark-blue: #19202d;
+  --midnight: #121721;
+  /*secondary colors*/
+  --white: #ffffff;
+  --light-grey: #f4f6f8;
+  --gray: #9daec2;
+  --dark-grey: #6e8098;
+  --main-button-font: white;
+}
+
+[data-theme="dark"] {
+  --light-grey: #121721;
+  --white: #19202d;
+  --secondary-violet: white;
+  --light-violet-low-opacity: rgba(
+    110,
+    128,
+    152,
+    0.2
+  ); /*seconday button equivalent*/
+  --dark-grey: #f4f6f8; /*dark grey becomes light grey*/
+  --midnight: white;
+}
+```
+
+Using useEffect to Toggle Themes
+
+In React, I used the useEffect hook to dynamically apply the theme by toggling the data-theme attribute on the <body> element. The CSS [data-theme="dark"] rule automatically applied the appropriate styles when the attribute was set to "dark".
+
+```jsx
+export default function ({ isDarkMode, setIsDarkMode }) {
+  useEffect(() => {
+    // Set the data-theme attribute on the body tag
+    if (isDarkMode) {
+      document.body.setAttribute("data-theme", "dark");
+    } else {
+      document.body.setAttribute("data-theme", "");
+    }
+  }, [isDarkMode]);
+  //handleThemeChange function:
+  //if there's a change in the checkbox, set isDarkMode to the opposite of its current value
+  //at useEffect, detect if there's a change in isDarkMode, if there is,
+  //set the data - theme attribute on the body tag to either "dark" or "light"
+}
+```
+
+### Continued development
+
+1. **Full-stack development**: In the next phase, I aim to transition this project into a full-stack application by incorporating a back-end using Node.js and Express. This will allow me to manage server-side logic, authentication, and database interactions.
+
+2. **API integration**: I also plan to enhance the project by fetching real data from an external API. This will involve working with RESTful or GraphQL APIs to provide dynamic content and ensure the project reflects real-world use cases.
+
+### Useful resources
+
+- [React Dark Mode Toggle/Theme](https://www.youtube.com/watch?v=sy-rRtT84CQ&t=664s) - Inspired me to create Dark mode theme. Learned about the custom CSS attribute selector here!
+- [Load More Button React Js Material UI Project](https://www.youtube.com/watch?v=2YrLdk5t2ec&t=670s) - Youtube vid that helped inspired me to build the load more functionality solution with react.
+
+## Author
+
+- Website - [Nydia Subur](https://nydia-subur-portfolio.netlify.app/)
+- Frontend Mentor - [@nydiasubur](https://www.frontendmentor.io/profile/nydiasubur)
+- Twitter - [@nydiasubur](https://x.com/nydiasubur)

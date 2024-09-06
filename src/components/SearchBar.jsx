@@ -7,14 +7,10 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
 
   const handleMobileModeFilterPopUp = () => {
     setShowModal(true); // Show the modal when the filter icon is clicked
-    useEffect(() => {
-      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    });
   };
 
   const closeModal = () => {
     setShowModal(false); // Hide the modal when the close button or outside area is clicked
-    document.body.style.backgroundColor = "";
   };
 
   let fullTimeOnly = false;
