@@ -79,7 +79,7 @@ A key challenge in this project was handling multiple inputs and dynamically ren
 2. Location (text input)
 3. Full-time job checkbox
 
-To achieve this, I carefully managed the component states, including originalJobList to store the unfiltered data and jobList to store the filtered results. These states (stored at the home page component) were shared with child components to enable smooth filtering logic. The search bar component below takes in originalJobList, jobList, and setJobList as props and applies filter functions accordingly.
+To achieve this, I carefully managed the component states, including `originalJobList` to store the unfiltered data and `jobList` to store the filtered results. These states (stored at the home page component) were shared with child components to enable smooth filtering logic. The search bar component below takes in `originalJobList`, `jobList`, and `setJobList` as props and applies filter functions accordingly.
 
 ```jsx
 export default function SearchBar({ originalJobList, jobList, setJobList }) {
@@ -154,7 +154,7 @@ x;
 
 ### 3. Filter by Location
 
-This function filters the job list based on the user’s location input. It updates the jobList state with matching results or restores the original list if the input is cleared.
+This function filters the job list based on the user’s location input. It updates the `jobList` state with matching results or restores the original list from the given JSON file if the input is cleared.
 
 ```jsx
 function handleFilterByLocation(e) {
@@ -175,8 +175,8 @@ function handleFilterByLocation(e) {
 
 Lastly, in this project, one of the key things I learned was how to use the [data-theme="dark"] attribute selector in CSS to dynamically apply styles based on the theme. By leveraging CSS variables and this attribute, I was able to efficiently switch between light and dark modes.
 
-Using [data-theme="dark"] in CSS
-I used the [data-theme="dark"] attribute to target and change the styles for dark mode without manually applying class-based styles. This allowed me to declare the default (light) theme in the :root pseudo-class and switch to dark mode by setting the data-theme="dark" attribute on the <body> element.
+Using `[data-theme="dark"]` in CSS
+I used the `[data-theme="dark"]` attribute to target and change the styles for dark mode without manually applying class-based styles. This allowed me to declare the default (light) theme in the :root pseudo-class and switch to dark mode by setting the data-theme="dark" attribute on the <body> element.
 
 ```css
 :root {

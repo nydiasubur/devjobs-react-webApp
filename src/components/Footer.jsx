@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="text-center personal-info">
+    <footer className="text-center personal-info mt-5">
       <div className="footer-email">nydiasubur@gmail.com</div>
       <div className="trademark m-3">
         <div className="social-links m-3 d-flex justify-content-evenly">
