@@ -52,7 +52,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - Vanilla CSS
 - Bootstrap 5.3
-- [useLocalStorage] (https://www.npmjs.com/package/use-local-storage) - Custom React hook for local storage management
+- [useLocalStorage](https://www.npmjs.com/package/use-local-storage) - Custom React hook for local storage management
 
 # 3 main things learned in this project
 
@@ -113,7 +113,7 @@ export default function SearchBar({ originalJobList, jobList, setJobList }) {
 
 The 3 main functions of my jsx to handle the filter function are as follows:
 
-# 1. Filter by Job Title or Company
+### 1. Filter by Job Title or Company
 
 This function filters the job list based on user input in the job title or company field. It updates the state to trigger re-rendering of the filtered results.
 
@@ -134,7 +134,7 @@ function handleFilterByTitleOrCompanies(e) {
 }
 ```
 
-# 2. Full-Time Job Filter
+### 2. Full-Time Job Filter
 
 This function filters the job list to show only full-time positions when the checkbox is selected. If unchecked, it restores the full job list.
 
@@ -152,7 +152,7 @@ function handleFullTimeOnlyCheckbox(e) {
 x;
 ```
 
-# 3. Filter by Location
+### 3. Filter by Location
 
 This function filters the job list based on the user’s location input. It updates the jobList state with matching results or restores the original list if the input is cleared.
 
@@ -173,7 +173,7 @@ function handleFilterByLocation(e) {
 
 ## 3.Custom CSS Variable/attribute selector and Using useEffect to Access Attributes/Properties Outside of the Component
 
-In this project, one of the key things I learned was how to use the [data-theme="dark"] attribute selector in CSS to dynamically apply styles based on the theme. By leveraging CSS variables and this attribute, I was able to efficiently switch between light and dark modes.
+Lastly, in this project, one of the key things I learned was how to use the [data-theme="dark"] attribute selector in CSS to dynamically apply styles based on the theme. By leveraging CSS variables and this attribute, I was able to efficiently switch between light and dark modes.
 
 Using [data-theme="dark"] in CSS
 I used the [data-theme="dark"] attribute to target and change the styles for dark mode without manually applying class-based styles. This allowed me to declare the default (light) theme in the :root pseudo-class and switch to dark mode by setting the data-theme="dark" attribute on the <body> element.
@@ -184,7 +184,6 @@ I used the [data-theme="dark"] attribute to target and change the styles for dar
   --violet: #5a64e0;
   --secondary-violet: #5a64e0;
   --light-violet: #939bf4;
-  --light-violet-low-opacity: rgba(147, 155, 244, 0.2);
   --very-dark-blue: #19202d;
   --midnight: #121721;
   /*secondary colors*/
@@ -212,7 +211,7 @@ I used the [data-theme="dark"] attribute to target and change the styles for dar
 
 Using useEffect to Toggle Themes
 
-In React, I used the useEffect hook to dynamically apply the theme by toggling the data-theme attribute on the <body> element. The CSS [data-theme="dark"] rule automatically applied the appropriate styles when the attribute was set to "dark".
+After setting up the custom CSS properties, I used the useEffect hook to dynamically apply the theme by toggling the data-theme attribute on the <body> element. The CSS [data-theme="dark"] rule automatically applied the appropriate styles when the attribute was set to "dark". I used `useEffect` as it allows me to access components that is outside of my current one. In this case, I am accessing the <body> element in the `ToggleThemeButton` component
 
 ```jsx
 export default function ({ isDarkMode, setIsDarkMode }) {
